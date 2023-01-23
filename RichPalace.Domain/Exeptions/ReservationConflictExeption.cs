@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RichPalace.BL.Exeptions
+namespace RichPalace.Domain.Exeptions
 {
     public class ReservationConflictExeption : Exception
     {

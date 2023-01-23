@@ -1,4 +1,4 @@
-﻿using RichPalace.BL.Exeptions;
+﻿using RichPalace.Domain.Exeptions;
 using RichPalace.BL.Services;
 using RichPalace.Domain.Models;
 using RichPalace.UI.ViewModels;
