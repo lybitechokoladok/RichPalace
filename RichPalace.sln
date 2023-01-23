@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RichPalace", "RichPalace\RichPalace.csproj", "{FEE6E131-D9B0-430A-856B-5466E9B342C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RichPalace.WPF", "RichPalace\RichPalace.WPF.csproj", "{FEE6E131-D9B0-430A-856B-5466E9B342C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RichPalace.Domain", "RichPalace.Domain\RichPalace.Domain.csproj", "{66D37D5B-F52A-44D1-A412-C4574A2FB73E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RichPalace.Domain", "RichPalace.Domain\RichPalace.Domain.csproj", "{66D37D5B-F52A-44D1-A412-C4574A2FB73E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
