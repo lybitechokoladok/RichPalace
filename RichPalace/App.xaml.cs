@@ -44,7 +44,7 @@ namespace RichPalace.WPF
                 CreateAddPersonNavigationService(s)));
             services.AddTransient<ReservationListingViewModel>(s => new ReservationListingViewModel(
                 s.GetRequiredService<ReservationStore>(),
-                CreateReservationListingViewModel(s)));
+                CreateReservationListingNavigationService(s)));
             services.AddTransient<AddPersonViewModel>(s => new AddPersonViewModel(
                 s.GetRequiredService<PeopleStore>(),
                 s.GetRequiredService<CloseModalNavigationService>()
@@ -125,12 +125,12 @@ namespace RichPalace.WPF
             return new NavigationBarViewModel(serviceProvider.GetRequiredService<AccountStore>(),
                 CreateHomeNavigationService(serviceProvider),
                 CreateAccountNavigationService(serviceProvider),
-                CreateReservationListingViewModel(serviceProvider),
+                CreateReservationListingNavigationService(serviceProvider),
                 CreateLoginNavigationService(serviceProvider),
                 CreatePeopleListingNavigationService(serviceProvider));
         }
 
-        private INavigationService CreateReservationListingViewModel(IServiceProvider serviceProvider) 
+        private INavigationService CreateReservationListingNavigationService(IServiceProvider serviceProvider) 
         {
             return new LayoutNavigationService<ReservationListingViewModel>(
                 serviceProvider.GetRequiredService<NavigationStore>(),
