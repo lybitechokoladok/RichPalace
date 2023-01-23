@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RichPalace.BL.Services
+namespace RichPalace.WPF.Services
 {
     public interface INavigationService
     {

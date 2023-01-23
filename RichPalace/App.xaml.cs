@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using RichPalace.BL.Services;
+using RichPalace.WPF.Services;
 using RichPalace.Domain.Models;
-using RichPalace.IU;
-using RichPalace.UI.Stores;
-using RichPalace.UI.ViewModels;
+using RichPalace.WPF;
+using RichPalace.WPF.Stores;
+using RichPalace.WPF.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -12,7 +12,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace RichPalace
+namespace RichPalace.WPF
 {
     /// <summary>
     /// Interaction logic for App.xaml

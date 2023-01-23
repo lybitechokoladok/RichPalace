@@ -1,12 +1,12 @@
-﻿using RichPalace.UI.Stores;
-using RichPalace.UI.ViewModels;
+﻿using RichPalace.WPF.Stores;
+using RichPalace.WPF.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RichPalace.BL.Services
+namespace RichPalace.WPF.Services
 {
     public class ModalNavigationService<TViewModel> : INavigationService
         where TViewModel: ViewModelBase
