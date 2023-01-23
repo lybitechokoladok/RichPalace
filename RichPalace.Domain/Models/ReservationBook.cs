@@ -1,4 +1,4 @@
-﻿using RichPalace.BL.Exeptions;
+﻿using RichPalace.Domain.Exeptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
