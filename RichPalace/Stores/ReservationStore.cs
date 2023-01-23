@@ -18,16 +18,12 @@ namespace RichPalace.WPF.Stores
             set
             {
                 _reservations = value;
-                OnRservationAdded();
+                ReservationAdded?.Invoke();
             }
         }
 
 
         public event Action ReservationAdded;
 
-        public void OnRservationAdded()
-        {
-            ReservationAdded?.Invoke();
-        }
     }
 }

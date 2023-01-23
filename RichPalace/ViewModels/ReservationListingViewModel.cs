@@ -29,11 +29,12 @@ namespace RichPalace.WPF.ViewModels
             _reservations.Add(new ReservationViewModel(new Reservation(new RoomID(3, 4), "Nikita", DateTime.Now, DateTime.Now)));
             _reservations.Add(new ReservationViewModel(new Reservation(new RoomID(5, 6), "Nikita", DateTime.Now, DateTime.Now)));
 
+            _reservationStore.ReservationAdded += OnReservationAdded;
         }
 
-        private void OnReservationAdded(Reservation reservation)
+        private void OnReservationAdded()
         {
-            _reservations.Add(new ReservationViewModel(reservation));
+            OnPropertyChanged(nameof(Reservation));
         }
     }
 }
