@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace RichPalace.WPF.Commands
 {
@@ -21,6 +22,24 @@ namespace RichPalace.WPF.Commands
             _viewModel = viewModel;
             _accountStore = accountStore;
             _navigationService = navigationService;
+
+            _viewModel.PropertyChanged += OnViewModelPropertyChanged;
+        }
+
+        private void OnViewModelPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(LoginViewModel.Username) ||
+                e.PropertyName == nameof(LoginViewModel.Password))
+            {
+                OnCanExecuteChanged();
+            }
+        }
+
+        public override bool CanExecute(object? parameter)
+        {
+            return _viewModel.Username == _viewModel.Password &&
+                _viewModel.Username == "admin" &&
+                base.CanExecute(parameter);
         }
 
         public override void Execute(object parameter)
