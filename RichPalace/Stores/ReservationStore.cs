@@ -10,20 +10,11 @@ namespace RichPalace.WPF.Stores
 {
     public class ReservationStore
     {
-        private ViewModelBase _reservations;
+        public event Action<Reservation> ReservationAdded;
 
-        public ViewModelBase Reservations
+        public void AddReservation(Reservation reservation) 
         {
-            get => _reservations;
-            set
-            {
-                _reservations = value;
-                ReservationAdded?.Invoke();
-            }
+            ReservationAdded?.Invoke(reservation);
         }
-
-
-        public event Action ReservationAdded;
-
     }
 }

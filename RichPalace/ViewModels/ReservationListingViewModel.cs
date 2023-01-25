@@ -34,9 +34,9 @@ namespace RichPalace.WPF.ViewModels
             _reservationStore.ReservationAdded += OnReservationAdded;
         }
 
-        private void OnReservationAdded()
+        private void OnReservationAdded(Reservation reservation)
         {
-            OnPropertyChanged(nameof(Reservation));
+            _reservations.Add(new ReservationViewModel(reservation));
         }
     }
 }
