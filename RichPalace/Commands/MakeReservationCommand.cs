@@ -24,24 +24,9 @@ namespace RichPalace.WPF.Commands
             _makeReservationViewModel = makeReservationViewModel;
             _reservationStore = reservationStore;
             _reservationViewNavigationService = reservationViewNavigationService;
-            _makeReservationViewModel.PropertyChanged += OnViewModelPropertyChanged;
+
         }
 
-        private void OnViewModelPropertyChanged(object sender, PropertyChangedEventArgs e)
-        {
-            if (e.PropertyName == nameof(MakeReservationViewModel.Username) ||
-                e.PropertyName == nameof(MakeReservationViewModel.FloorNumber))
-            {
-                OnCanExecuteChanged();
-            }
-        }
-
-        public override bool CanExecute(object? parameter)
-        {
-            return !string.IsNullOrEmpty(_makeReservationViewModel.Username) &&
-                _makeReservationViewModel.FloorNumber > 0 &&
-                base.CanExecute(parameter);
-        }
         public override void Execute(object? parameter)
         {
             Reservation reservation = new Reservation(
@@ -52,6 +37,7 @@ namespace RichPalace.WPF.Commands
 
             try
             {
+                _reservationStore.AddReservation(reservation);
                 MessageBox.Show("Succesfully reserved room", "Succes",
                    MessageBoxButton.OK, MessageBoxImage.Information);
 
