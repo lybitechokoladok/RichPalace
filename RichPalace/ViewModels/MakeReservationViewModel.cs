@@ -73,9 +73,9 @@ namespace RichPalace.WPF.ViewModels
         public ICommand SubmitCommand { get; }
         public ICommand CancelCommand { get; }
 
-        public MakeReservationViewModel(Hotel hotel, INavigationService reservationViewNavigationService)
+        public MakeReservationViewModel(ReservationStore reservationStore, INavigationService reservationViewNavigationService)
         {
-            SubmitCommand = new MakeReservationCommand(this, hotel, reservationViewNavigationService);
+            SubmitCommand = new MakeReservationCommand(this, reservationStore, reservationViewNavigationService);
             CancelCommand = new NavigateCommand(reservationViewNavigationService);
         }
     }

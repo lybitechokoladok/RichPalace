@@ -9,19 +9,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using RichPalace.WPF.ViewModels;
+using RichPalace.WPF.Stores;
 
 namespace RichPalace.WPF.Commands
 {
     public class MakeReservationCommand : CommandBase
     {
         private readonly MakeReservationViewModel _makeReservationViewModel;
-        private readonly Hotel _hotel;
+        private readonly ReservationStore _reservationStore;
         private readonly INavigationService _reservationViewNavigationService;
 
-        public MakeReservationCommand(MakeReservationViewModel makeReservationViewModel, Hotel hotel, INavigationService reservationViewNavigationService)
+        public MakeReservationCommand(MakeReservationViewModel makeReservationViewModel, ReservationStore reservationStore, INavigationService reservationViewNavigationService)
         {
             _makeReservationViewModel = makeReservationViewModel;
-            _hotel = hotel;
+            _reservationStore = reservationStore;
             _reservationViewNavigationService = reservationViewNavigationService;
             _makeReservationViewModel.PropertyChanged += OnViewModelPropertyChanged;
         }
@@ -51,7 +52,6 @@ namespace RichPalace.WPF.Commands
 
             try
             {
-                _hotel.MakeReservation(reservation);
                 MessageBox.Show("Succesfully reserved room", "Succes",
                    MessageBoxButton.OK, MessageBoxImage.Information);
 
