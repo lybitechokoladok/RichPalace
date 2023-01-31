@@ -6,12 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using RichPalace.WPF.Stores;
 
 namespace RichPalace.WPF.ViewModels
 {
     public class HomeViewModel : ViewModelBase
     {
-        public string WelcomeMessage => "Welcome to my application.";
+
+        public string WelcomeMessage => "Welcome to my application. Get start use to click on button.";
 
         public ICommand NavigateLoginCommand { get; }
 

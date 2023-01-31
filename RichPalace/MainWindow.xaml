@@ -10,10 +10,10 @@
         xmlns:custom="clr-namespace:ModalControl;assembly=ModalControl"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
+        MinHeight="300" MinWidth="500"
         FontSize="14"
         Background="#d9d9d9">
-    <Grid Margin="20 10"
-          MaxWidth="600">
+    <Grid>
         <Grid.Resources>
             <DataTemplate DataType="{x:Type vms:MakeReservationViewModel}">
                 <views:MakeReservationView/>

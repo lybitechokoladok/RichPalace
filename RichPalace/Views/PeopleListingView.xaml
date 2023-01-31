@@ -12,30 +12,43 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <TextBlock FontFamily="Montserrat" 
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0"
+                FontFamily="Montserrat" 
                 FontSize="28" Text="People" />
-            <Button
+            <Button Grid.Column="1"
                 Margin="10 0 0 0"
                 Padding="10 5"
                 VerticalAlignment="Center"
+                BorderThickness="0"
                 FontFamily="Montserrat"
                 Background="#2b5875"
                 Foreground="White"
                 Command="{Binding AddPersonCommand}"
                 Content="Add Person" />
-        </StackPanel>
+        </Grid>
 
-        <ListView
-            Grid.Row="1"
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            
+            <ListView
+            Grid.Column="0"
             FontFamily="Montserrat"
             Margin="0 20 0 0"
             ItemsSource="{Binding People}">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Name" />
-                </GridView>
-            </ListView.View>
-        </ListView>
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Name" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
     </Grid>
 </UserControl>
