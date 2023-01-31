@@ -38,7 +38,7 @@
                 <TextBlock Grid.Column="1" 
                         Text="Admin"
                         Margin="20 0 0 0"
-                        />
+                        VerticalAlignment="Center"/>
             </Grid>
 
             <Grid Grid.Row="2" Margin="0 20 0 0">
@@ -54,7 +54,8 @@
 
                 <TextBlock Grid.Column="1" 
                         Text="14"
-                        Margin="20 0 0 0"/>
+                        Margin="20 0 0 0"
+                        VerticalAlignment="Center"/>
             </Grid>
         </Grid>
     </Border>
