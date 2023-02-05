@@ -25,7 +25,8 @@ namespace RichPalace.WPF.Commands
         public override void Execute(object parameter)
         {
             string name = _addPersonViewModel.Name;
-            _peopleStore.AddPerson(name);
+            string role = _addPersonViewModel.Role;
+            _peopleStore.AddPerson(name, role);
 
             _navigationService.Navigate();
         }

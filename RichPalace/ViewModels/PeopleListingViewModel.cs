@@ -28,16 +28,16 @@ namespace RichPalace.WPF.ViewModels
             AddPersonCommand = new NavigateCommand(addPersonNavigationService);
             _people = new ObservableCollection<PersonViewModel>();
 
-            _people.Add(new PersonViewModel("Angela"));
-            _people.Add(new PersonViewModel("Georgy"));
-            _people.Add(new PersonViewModel("Zina"));
+            _people.Add(new PersonViewModel("Angela", "admin"));
+            _people.Add(new PersonViewModel("Georgy",  "admin"));
+            _people.Add(new PersonViewModel("Zina", "admin"));
 
             _peopleStore.PersonAdded += OnPersonAdded;
         }
 
-        private void OnPersonAdded(string name)
+        private void OnPersonAdded(string name, string role)
         {
-            _people.Add(new PersonViewModel(name));
+            _people.Add(new PersonViewModel(name, role));
         }
     }
 }

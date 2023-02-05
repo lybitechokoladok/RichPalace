@@ -13,14 +13,14 @@
                 CornerRadius="5"
                 Background="White">
 
-        <Grid Grid.IsSharedSizeScope="True">
+        <Grid Grid.IsSharedSizeScope="True" DataContext="{Binding People}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
-            <TextBlock Text="Nikita"
+            <TextBlock Text="{Binding Name}"
                            FontSize="22"
                            Grid.Row="0"/>
 
@@ -36,7 +36,7 @@
                                FontWeight="Bold"/>
 
                 <TextBlock Grid.Column="1" 
-                        Text="Admin"
+                        Text="{Binding Role}"
                         Margin="20 0 0 0"
                         VerticalAlignment="Center"/>
             </Grid>

@@ -26,6 +26,20 @@ namespace RichPalace.WPF.ViewModels
             }
         }
 
+        private string _role;
+        public string Role
+        {
+            get
+            {
+                return _role;
+            }
+            set
+            {
+                _role = value;
+                OnPropertyChanged(nameof(Role));
+            }
+        }
+
         public ICommand SubmitCommand { get; }
         public ICommand CancelCommand { get; }
 

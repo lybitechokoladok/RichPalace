@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RichPalace.WPF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,11 +9,12 @@ namespace RichPalace.WPF.Stores
 {
     public class PeopleStore
     {
-        public event Action<string> PersonAdded;
 
-        public void AddPerson(string name)
+        public event Action<string, string> PersonAdded;
+
+        public void AddPerson(string name, string role)
         {
-            PersonAdded?.Invoke(name);
+            PersonAdded?.Invoke(name, role);
         }
     }
 }
