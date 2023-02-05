@@ -44,10 +44,46 @@
                                             <Border Background="White" BorderBrush="Gray"
                                                     BorderThickness="1">
                                                 
-                                                <StackPanel>
+                                                <StackPanel MinWidth="125">
                                                     <StackPanel.Resources>
                                                         <Style TargetType="Button">
-                                                            
+                                                            <Setter Property="Background" Value="#f0f0f0"/>
+                                                            <Setter Property="Foreground" Value="Black"/>
+                                                            <Setter Property="Padding" Value="20 5"/>
+                                                            <Setter Property="Cursor" Value="Hand"/>
+
+                                                            <Setter Property="Template">
+                                                                <Setter.Value>
+                                                                    <ControlTemplate TargetType="Button">
+                                                                        <Border Background="{TemplateBinding Background}"
+                                                                                Padding="{TemplateBinding Padding}"
+                                                                                Margin="{TemplateBinding Margin}">
+                                                                            <ContentPresenter/>
+                                                                        </Border>
+                                                                    </ControlTemplate>
+                                                                </Setter.Value>
+                                                            </Setter>
+
+                                                            <Style.Triggers>
+                                                                <Trigger Property="IsMouseOver" Value="True">
+                                                                    <Trigger.EnterActions>
+                                                                        <BeginStoryboard>
+                                                                            <Storyboard>
+                                                                                <ColorAnimation Storyboard.TargetProperty="Background.(SolidColorBrush.Color)"
+                                                                                                To="#c7c7c7" Duration="0:0:0.1"/>
+                                                                            </Storyboard>
+                                                                        </BeginStoryboard>
+                                                                    </Trigger.EnterActions>
+                                                                    <Trigger.ExitActions>
+                                                                        <BeginStoryboard>
+                                                                            <Storyboard>
+                                                                                <ColorAnimation Storyboard.TargetProperty="Background.(SolidColorBrush.Color)"
+                                                                                                To="#f0f0f0" Duration="0:0:0.1"/>
+                                                                            </Storyboard>
+                                                                        </BeginStoryboard>
+                                                                    </Trigger.ExitActions>
+                                                                </Trigger>
+                                                            </Style.Triggers>
                                                         </Style>
                                                     </StackPanel.Resources>
                                                     <Button Content="Edit"/>
