@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using RichPalace.Domain.Models;
 
 namespace RichPalace.WPF.ViewModels
 {
@@ -15,29 +16,25 @@ namespace RichPalace.WPF.ViewModels
     {
         private readonly ClientStore _clientStore;
 
-        private readonly ObservableCollection<ClientViewModel> _client;
+        private readonly ObservableCollection<ClientViewModel> _clients;
 
-        public IEnumerable<ClientViewModel> Client => _client;
+        public IEnumerable<ClientViewModel> Client => _clients;
 
         public ICommand AddClientCommand { get; }
 
         public ClientListingViewModel(ClientStore clientStore, INavigationService addPersonNavigationService)
         {
             _clientStore = clientStore;
+            _clients = new ObservableCollection<ClientViewModel>();
 
             AddClientCommand = new NavigateCommand(addPersonNavigationService);
-            _client = new ObservableCollection<ClientViewModel>();
-
-            _client.Add(new ClientViewModel("Angela", "admin@gmail.com"));
-            _client.Add(new ClientViewModel("Georgy", "admin@gmail.com"));
-            _client.Add(new ClientViewModel("Zina", "admin@gmail.com"));
 
             _clientStore.ClientAdded += OnClientAdded;
         }
 
-        private void OnClientAdded(string name, string email)
+        private void OnClientAdded(Client client)
         {
-            _client.Add(new ClientViewModel(name, email));
+            _clients.Add(new ClientViewModel(client));
         }
     }
 }

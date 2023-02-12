@@ -1,4 +1,5 @@
-﻿using RichPalace.WPF.Services;
+﻿using RichPalace.Domain.Models;
+using RichPalace.WPF.Services;
 using RichPalace.WPF.Stores;
 using RichPalace.WPF.ViewModels;
 using System;
@@ -11,22 +12,23 @@ namespace RichPalace.WPF.Commands
 {
     public class AddClientCommand : CommandBase
     {
-        private readonly AddClientViewModel _addPersonViewModel;
+        private readonly AddClientViewModel _addClientViewModel;
         private readonly ClientStore _peopleStore;
         private readonly INavigationService _navigationService;
 
         public AddClientCommand(AddClientViewModel addPersonViewModel, ClientStore peopleStore, INavigationService navigationService)
         {
-            _addPersonViewModel = addPersonViewModel;
+            _addClientViewModel = addPersonViewModel;
             _peopleStore = peopleStore;
             _navigationService = navigationService;
         }
 
         public override void Execute(object parameter)
         {
-            string name = _addPersonViewModel.Name;
-            string role = _addPersonViewModel.Role;
-            _peopleStore.AddClient(name, role);
+            Client client = new Client(_addClientViewModel.Name,
+                _addClientViewModel.Email);
+
+            _peopleStore.AddClient(client);
 
             _navigationService.Navigate();
         }

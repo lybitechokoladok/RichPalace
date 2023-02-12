@@ -1,4 +1,5 @@
 ﻿using RichPalace.Domain.Models;
+using RichPalace.WPF.Stores;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,15 +10,13 @@ namespace RichPalace.WPF.ViewModels
 {
     public class ClientViewModel : ViewModelBase
     {
-        private readonly Reservation _reservation;
-        public string Name { get; }
-        public string Email { get; }
-        public string RoomId => _reservation.RoomID?.ToString();
+        private readonly Client _client;
+        public string Name => _client.Name;
+        public string Email => _client.Email;
 
-        public ClientViewModel(string name, string role)
+        public ClientViewModel(Client client)
         {
-            Name = name;
-            Email = role;
+            _client = client;
         }
     }
 }

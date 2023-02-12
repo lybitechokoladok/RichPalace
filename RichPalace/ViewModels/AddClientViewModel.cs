@@ -26,17 +26,17 @@ namespace RichPalace.WPF.ViewModels
             }
         }
 
-        private string _role;
-        public string Role
+        private string _email;
+        public string Email
         {
             get
             {
-                return _role;
+                return _email;
             }
             set
             {
-                _role = value;
-                OnPropertyChanged(nameof(Role));
+                _email = value;
+                OnPropertyChanged(nameof(Email));
             }
         }
 

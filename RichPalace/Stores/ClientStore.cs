@@ -1,4 +1,5 @@
-﻿using RichPalace.WPF.ViewModels;
+﻿using RichPalace.Domain.Models;
+using RichPalace.WPF.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,24 @@ namespace RichPalace.WPF.Stores
     public class ClientStore
     {
 
-        public event Action<string, string> ClientAdded;
+        public event Action<Client> ClientAdded;
+        public event Action SelectedCLientChanged;
 
-        public void AddClient(string name, string email)
+        private Client _selectedClient;
+
+        public Client  SelectedClient
         {
-            ClientAdded?.Invoke(name, email);
+            get => _selectedClient;
+            set 
+            {
+                _selectedClient = value;
+                SelectedCLientChanged?.Invoke();
+            }
+        }
+
+        public void AddClient(Client client)
+        {
+            ClientAdded?.Invoke(client);
         }
     }
 }
