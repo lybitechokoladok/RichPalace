@@ -20,7 +20,7 @@
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0"
                 FontFamily="Montserrat" 
-                FontSize="28" Text="People" />
+                FontSize="28" Text="Clients" />
             <Button Grid.Column="1"
                 Margin="10 0 0 0"
                 Padding="10 5"
@@ -30,7 +30,7 @@
                 Background="#2b5875"
                 Foreground="White"
                 Command="{Binding AddClientCommand}"
-                Content="Add Person" />
+                Content="Add Client" />
         </Grid>
 
         <Grid Grid.Row="1" Margin="0 15 0 0 ">
