@@ -11,13 +11,13 @@ namespace RichPalace.WPF.ViewModels
     {
         private readonly Reservation _reservation;
         public string Name { get; }
-        public string Role { get; }
+        public string Email { get; }
         public string RoomId => _reservation.RoomID?.ToString();
 
         public ClientViewModel(string name, string role)
         {
             Name = name;
-            Role = role;
+            Email = role;
         }
     }
 }

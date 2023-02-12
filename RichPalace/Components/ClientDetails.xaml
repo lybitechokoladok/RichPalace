@@ -32,11 +32,11 @@
 
                 <TextBlock Grid.Column="0"
                                FontSize="16"
-                               Text="Role"
+                               Text="Email"
                                FontWeight="Bold"/>
 
                 <TextBlock Grid.Column="1" 
-                        Text="{Binding Role}"
+                        Text="{Binding Email}"
                         Margin="20 0 0 0"
                         VerticalAlignment="Center"/>
             </Grid>

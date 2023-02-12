@@ -37,9 +37,9 @@ namespace RichPalace.WPF.Commands
 
         public override bool CanExecute(object? parameter)
         {
-            return _viewModel.Username == _viewModel.Password &&
-                _viewModel.Username == "admin" &&
-                base.CanExecute(parameter);
+            //return _viewModel.Username == _viewModel.Password &&
+            //    _viewModel.Username == "admin" &&
+                return base.CanExecute(parameter);
         }
 
         public override void Execute(object parameter)

@@ -28,16 +28,16 @@ namespace RichPalace.WPF.ViewModels
             AddPersonCommand = new NavigateCommand(addPersonNavigationService);
             _client = new ObservableCollection<ClientViewModel>();
 
-            _client.Add(new ClientViewModel("Angela", "admin"));
-            _client.Add(new ClientViewModel("Georgy",  "admin"));
-            _client.Add(new ClientViewModel("Zina", "admin"));
+            _client.Add(new ClientViewModel("Angela", "admin@gmail.com"));
+            _client.Add(new ClientViewModel("Georgy", "admin@gmail.com"));
+            _client.Add(new ClientViewModel("Zina", "admin@gmail.com"));
 
             _clientStore.ClientAdded += OnClientAdded;
         }
 
-        private void OnClientAdded(string name, string role)
+        private void OnClientAdded(string name, string email)
         {
-            _client.Add(new ClientViewModel(name, role));
+            _client.Add(new ClientViewModel(name, email));
         }
     }
 }

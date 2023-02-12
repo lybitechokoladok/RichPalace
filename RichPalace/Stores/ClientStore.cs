@@ -12,9 +12,9 @@ namespace RichPalace.WPF.Stores
 
         public event Action<string, string> ClientAdded;
 
-        public void AddClient(string name, string role)
+        public void AddClient(string name, string email)
         {
-            ClientAdded?.Invoke(name, role);
+            ClientAdded?.Invoke(name, email);
         }
     }
 }
