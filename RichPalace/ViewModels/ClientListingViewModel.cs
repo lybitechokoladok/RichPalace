@@ -19,13 +19,13 @@ namespace RichPalace.WPF.ViewModels
 
         public IEnumerable<ClientViewModel> Client => _client;
 
-        public ICommand AddPersonCommand { get; }
+        public ICommand AddClientCommand { get; }
 
         public ClientListingViewModel(ClientStore clientStore, INavigationService addPersonNavigationService)
         {
             _clientStore = clientStore;
 
-            AddPersonCommand = new NavigateCommand(addPersonNavigationService);
+            AddClientCommand = new NavigateCommand(addPersonNavigationService);
             _client = new ObservableCollection<ClientViewModel>();
 
             _client.Add(new ClientViewModel("Angela", "admin@gmail.com"));
