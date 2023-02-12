@@ -26,7 +26,7 @@ namespace RichPalace.WPF
             IServiceCollection services = new ServiceCollection();
 
             services.AddSingleton<AccountStore>();
-            services.AddSingleton<PeopleStore>();
+            services.AddSingleton<ClientStore>();
             services.AddSingleton<ReservationStore>();
             services.AddSingleton<NavigationStore>();
             services.AddSingleton<ModalNavigationStore>();
@@ -39,14 +39,14 @@ namespace RichPalace.WPF
                 s.GetRequiredService<AccountStore>(),
                 CreateHomeNavigationService(s)));
             services.AddTransient<LoginViewModel>(CreateLoginViewModel);
-            services.AddTransient<PeopleListingViewModel>(s => new PeopleListingViewModel(
-                s.GetRequiredService<PeopleStore>(),
+            services.AddTransient<ClientListingViewModel>(s => new ClientListingViewModel(
+                s.GetRequiredService<ClientStore>(),
                 CreateAddPersonNavigationService(s)));
             services.AddTransient<ReservationListingViewModel>(s => new ReservationListingViewModel(
                 s.GetRequiredService<ReservationStore>(),
                 CreateMakeReservationNavigationService(s)));
-            services.AddTransient<AddPersonViewModel>(s => new AddPersonViewModel(
-                s.GetRequiredService<PeopleStore>(),
+            services.AddTransient<AddClientViewModel>(s => new AddClientViewModel(
+                s.GetRequiredService<ClientStore>(),
                 s.GetRequiredService<CloseModalNavigationService>()
                 ));
             services.AddTransient<MakeReservationViewModel>(s => new MakeReservationViewModel(
@@ -91,9 +91,9 @@ namespace RichPalace.WPF
 
         private INavigationService CreateAddPersonNavigationService(IServiceProvider serviceProvider)
         {
-            return new ModalNavigationService<AddPersonViewModel>(
+            return new ModalNavigationService<AddClientViewModel>(
                 serviceProvider.GetRequiredService<ModalNavigationStore>(),
-                () => serviceProvider.GetRequiredService<AddPersonViewModel>());
+                () => serviceProvider.GetRequiredService<AddClientViewModel>());
         }
 
         private INavigationService CreateMakeReservationNavigationService(IServiceProvider serviceProvider)
@@ -113,9 +113,9 @@ namespace RichPalace.WPF
 
         private INavigationService CreatePeopleListingNavigationService(IServiceProvider serviceProvider)
         {
-            return new LayoutNavigationService<PeopleListingViewModel>(
+            return new LayoutNavigationService<ClientListingViewModel>(
                 serviceProvider.GetRequiredService<NavigationStore>(),
-                () => serviceProvider.GetRequiredService<PeopleListingViewModel>(),
+                () => serviceProvider.GetRequiredService<ClientListingViewModel>(),
                 () => serviceProvider.GetRequiredService<NavigationBarViewModel>());
         }
 

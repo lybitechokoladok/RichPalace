@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="RichPalace.WPF.Views.PeopleListingView"
+﻿<UserControl x:Class="RichPalace.WPF.Views.ClientListingView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -29,7 +29,7 @@
                 FontFamily="Montserrat"
                 Background="#2b5875"
                 Foreground="White"
-                Command="{Binding AddPersonCommand}"
+                Command="{Binding AddClientCommand}"
                 Content="Add Person" />
         </Grid>
 
@@ -39,8 +39,8 @@
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
 
-            <components:PeopleListing Grid.Column="0" />
-            <components:PeopleDetails Grid.Column="1" Margin="10 0 0 0"/>
+            <components:ClientListing Grid.Column="0" />
+            <components:ClientDetails Grid.Column="1" Margin="10 0 0 0"/>
         </Grid>
     </Grid>
 </UserControl>

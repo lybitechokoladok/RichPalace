@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace RichPalace.WPF.Stores
 {
-    public class PeopleStore
+    public class ClientStore
     {
 
-        public event Action<string, string> PersonAdded;
+        public event Action<string, string> ClientAdded;
 
-        public void AddPerson(string name, string role)
+        public void AddClient(string name, string role)
         {
-            PersonAdded?.Invoke(name, role);
+            ClientAdded?.Invoke(name, role);
         }
     }
 }

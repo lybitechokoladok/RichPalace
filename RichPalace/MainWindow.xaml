@@ -30,11 +30,11 @@
             <DataTemplate DataType="{x:Type vms:LoginViewModel}">
                 <views:LoginView/>
             </DataTemplate>
-            <DataTemplate DataType="{x:Type vms:PeopleListingViewModel}">
-                <views:PeopleListingView/>
+            <DataTemplate DataType="{x:Type vms:ClientListingViewModel}">
+                <views:ClientListingView/>
             </DataTemplate>
-            <DataTemplate DataType="{x:Type vms:AddPersonViewModel}">
-                <views:AddPersonView/>
+            <DataTemplate DataType="{x:Type vms:AddClientViewModel}">
+                <views:AddClientView/>
             </DataTemplate>
             <DataTemplate DataType="{x:Type vms:LayoutViewModel}">
                 <components:Layout/>

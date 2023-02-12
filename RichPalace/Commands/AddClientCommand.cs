@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace RichPalace.WPF.Commands
 {
-    public class AddPersonCommand : CommandBase
+    public class AddClientCommand : CommandBase
     {
-        private readonly AddPersonViewModel _addPersonViewModel;
-        private readonly PeopleStore _peopleStore;
+        private readonly AddClientViewModel _addPersonViewModel;
+        private readonly ClientStore _peopleStore;
         private readonly INavigationService _navigationService;
 
-        public AddPersonCommand(AddPersonViewModel addPersonViewModel, PeopleStore peopleStore, INavigationService navigationService)
+        public AddClientCommand(AddClientViewModel addPersonViewModel, ClientStore peopleStore, INavigationService navigationService)
         {
             _addPersonViewModel = addPersonViewModel;
             _peopleStore = peopleStore;
@@ -26,7 +26,7 @@ namespace RichPalace.WPF.Commands
         {
             string name = _addPersonViewModel.Name;
             string role = _addPersonViewModel.Role;
-            _peopleStore.AddPerson(name, role);
+            _peopleStore.AddClient(name, role);
 
             _navigationService.Navigate();
         }

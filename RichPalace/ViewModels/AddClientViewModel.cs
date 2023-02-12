@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace RichPalace.WPF.ViewModels
 {
-    public class AddPersonViewModel : ViewModelBase
+    public class AddClientViewModel : ViewModelBase
     {
         private string _name;
         public string Name
@@ -43,9 +43,9 @@ namespace RichPalace.WPF.ViewModels
         public ICommand SubmitCommand { get; }
         public ICommand CancelCommand { get; }
 
-        public AddPersonViewModel(PeopleStore peopleStore, INavigationService closeNavigationService)
+        public AddClientViewModel(ClientStore clientStore, INavigationService closeNavigationService)
         {
-            SubmitCommand = new AddPersonCommand(this, peopleStore, closeNavigationService);
+            SubmitCommand = new AddClientCommand(this, clientStore, closeNavigationService);
             CancelCommand = new NavigateCommand(closeNavigationService);
         }
     }

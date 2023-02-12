@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace RichPalace.WPF.Views
 {
     /// <summary>
-    /// Логика взаимодействия для PeopleListingView.xaml
+    /// Логика взаимодействия для AddPersonView.xaml
     /// </summary>
-    public partial class PeopleListingView : UserControl
+    public partial class AddClientView : UserControl
     {
-        public PeopleListingView()
+        public AddClientView()
         {
             InitializeComponent();
         }

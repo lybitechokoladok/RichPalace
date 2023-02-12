@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace RichPalace.WPF.Components
+namespace RichPalace.WPF.Views
 {
     /// <summary>
-    /// Логика взаимодействия для PeopleDetails.xaml
+    /// Логика взаимодействия для PeopleListingView.xaml
     /// </summary>
-    public partial class PeopleDetails : UserControl
+    public partial class ClientListingView : UserControl
     {
-        public PeopleDetails()
+        public ClientListingView()
         {
             InitializeComponent();
         }
