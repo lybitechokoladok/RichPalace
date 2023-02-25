@@ -39,9 +39,7 @@ namespace RichPalace.WPF
                 s.GetRequiredService<AccountStore>(),
                 CreateHomeNavigationService(s)));
             services.AddTransient<LoginViewModel>(CreateLoginViewModel);
-            services.AddTransient<ClientListingViewModel>(s => new ClientListingViewModel(
-                s.GetRequiredService<ClientStore>(),
-                CreateAddPersonNavigationService(s)));
+            services.AddTransient<ClientViewModel>(s => new ClientViewModel());
             services.AddTransient<ReservationListingViewModel>(s => new ReservationListingViewModel(
                 s.GetRequiredService<ReservationStore>(),
                 CreateMakeReservationNavigationService(s)));
@@ -111,11 +109,11 @@ namespace RichPalace.WPF
                 () => serviceProvider.GetRequiredService<NavigationBarViewModel>());
         }
 
-        private INavigationService CreatePeopleListingNavigationService(IServiceProvider serviceProvider)
+        private INavigationService CreateClientNavigationService(IServiceProvider serviceProvider)
         {
-            return new LayoutNavigationService<ClientListingViewModel>(
+            return new LayoutNavigationService<ClientViewModel>(
                 serviceProvider.GetRequiredService<NavigationStore>(),
-                () => serviceProvider.GetRequiredService<ClientListingViewModel>(),
+                () => serviceProvider.GetRequiredService<ClientViewModel>(),
                 () => serviceProvider.GetRequiredService<NavigationBarViewModel>());
         }
 
@@ -137,7 +135,7 @@ namespace RichPalace.WPF
                 CreateAccountNavigationService(serviceProvider),
                 CreateReservationListingNavigationService(serviceProvider),
                 CreateLoginNavigationService(serviceProvider),
-                CreatePeopleListingNavigationService(serviceProvider));
+                CreateClientNavigationService(serviceProvider));
         }
 
         private INavigationService CreateReservationListingNavigationService(IServiceProvider serviceProvider) 

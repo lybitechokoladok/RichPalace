@@ -25,12 +25,6 @@ namespace RichPalace.WPF.Commands
 
         public override void Execute(object parameter)
         {
-            Client client = new Client(_addClientViewModel.Name,
-                _addClientViewModel.Email);
-
-            _peopleStore.AddClient(client);
-
-            _navigationService.Navigate();
         }
     }
 }

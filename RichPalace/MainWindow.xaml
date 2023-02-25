@@ -30,7 +30,7 @@
             <DataTemplate DataType="{x:Type vms:LoginViewModel}">
                 <views:LoginView/>
             </DataTemplate>
-            <DataTemplate DataType="{x:Type vms:ClientListingViewModel}">
+            <DataTemplate DataType="{x:Type vms:ClientViewModel}">
                 <views:ClientListingView/>
             </DataTemplate>
             <DataTemplate DataType="{x:Type vms:AddClientViewModel}">

@@ -39,8 +39,11 @@
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
 
-            <components:ClientListing Grid.Column="0" />
-            <components:ClientDetails Grid.Column="1" Margin="10 0 0 0"/>
+            <components:ClientListing Grid.Column="0" 
+                                      DataContext="{Binding ClientListingViewModel}"/>
+            
+            <components:ClientDetails Grid.Column="1" Margin="10 0 0 0"
+                                      DataContext="{Binding ClientDetailsViewModel}"/>
         </Grid>
     </Grid>
 </UserControl>
