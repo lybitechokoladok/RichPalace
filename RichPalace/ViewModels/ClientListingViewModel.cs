@@ -28,7 +28,8 @@ namespace RichPalace.WPF.ViewModels
             {
                 _selectedClientListingItemViewModel = value;
                 OnPropertyChanged(nameof(SelectedClientListingItemViewModel));
-                _selectedClientStore.SelectedClient = _selectedClientListingItemViewModel.Client;
+
+                _selectedClientStore.SelectedClient = _selectedClientListingItemViewModel?.Client;
             }
         }
 
