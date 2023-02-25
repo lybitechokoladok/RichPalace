@@ -27,6 +27,7 @@ namespace RichPalace.WPF
 
             services.AddSingleton<AccountStore>();
             services.AddSingleton<ClientStore>();
+            services.AddSingleton<SelectedClientStore>();
             services.AddSingleton<ReservationStore>();
             services.AddSingleton<NavigationStore>();
             services.AddSingleton<ModalNavigationStore>();
@@ -39,7 +40,8 @@ namespace RichPalace.WPF
                 s.GetRequiredService<AccountStore>(),
                 CreateHomeNavigationService(s)));
             services.AddTransient<LoginViewModel>(CreateLoginViewModel);
-            services.AddTransient<ClientViewModel>(s => new ClientViewModel());
+            services.AddTransient<ClientViewModel>(s => new ClientViewModel(
+                s.GetRequiredService<SelectedClientStore>()));
             services.AddTransient<ReservationListingViewModel>(s => new ReservationListingViewModel(
                 s.GetRequiredService<ReservationStore>(),
                 CreateMakeReservationNavigationService(s)));

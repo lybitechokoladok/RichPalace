@@ -22,7 +22,7 @@
                         CornerRadius="5">
                     <ListView
                         BorderThickness="0"
-                        ItemsSource="{Binding Client}">
+                        ItemsSource="{Binding ClientListingItemViewModel}">
                         <ListView.ItemContainerStyle>
                             <Style TargetType="ListBoxItem">
                                 <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
@@ -38,7 +38,7 @@
                                         </Grid.ColumnDefinitions>
 
                                         <TextBlock Grid.Column="0"
-                                        Text="{Binding Name}"/>
+                                        Text="{Binding Username}"/>
 
                                         <custom:DropdownMenu Grid.Column="1" Margin="10 0 0 0">
                                             <Border Background="White" BorderBrush="Gray"

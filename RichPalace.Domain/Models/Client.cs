@@ -8,13 +8,13 @@ namespace RichPalace.Domain.Models
 {
     public class Client
     {
-        public Client(string name, string email)
+        public Client(string userName, string email)
         {
-            Name = name;
+            Username = userName;
             Email = email;
         }
 
-        public string Name { get; set; }
+        public string Username { get; set; }
         public string Email { get; set; }
         public RoomID ReservedRoom { get; set; }
     }

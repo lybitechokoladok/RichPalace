@@ -17,10 +17,10 @@ namespace RichPalace.WPF.ViewModels
 
         public ICommand AddClientCommand { get;}
 
-        public ClientViewModel()
+        public ClientViewModel(SelectedClientStore selectedClientStore)
         {
-           ClientDetailsViewModel= new ClientDetailsViewModel();
-           ClientListingViewModel = new ClientListingViewModel();
+           ClientDetailsViewModel= new ClientDetailsViewModel(selectedClientStore);
+           ClientListingViewModel = new ClientListingViewModel(selectedClientStore);
 
          }
     }

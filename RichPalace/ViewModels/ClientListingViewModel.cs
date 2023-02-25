@@ -14,5 +14,16 @@ namespace RichPalace.WPF.ViewModels
 {
     public class ClientListingViewModel : ViewModelBase
     {
+        private readonly ObservableCollection<ClientListingItemViewModel> _clientListingItemViewModel;
+        public IEnumerable<ClientListingItemViewModel> ClientListingItemViewModel => _clientListingItemViewModel;
+
+        public ClientListingViewModel(SelectedClientStore selectedClientStore)
+        {
+            _clientListingItemViewModel = new ObservableCollection<ClientListingItemViewModel>();
+
+            _clientListingItemViewModel.Add(new ClientListingItemViewModel("Patric"));
+            _clientListingItemViewModel.Add(new ClientListingItemViewModel("Mary"));
+            _clientListingItemViewModel.Add(new ClientListingItemViewModel("Susan"));
+        }
     }
 }
