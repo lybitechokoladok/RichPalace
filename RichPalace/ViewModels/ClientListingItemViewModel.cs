@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RichPalace.Domain.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,14 +10,16 @@ namespace RichPalace.WPF.ViewModels
 {
     public class ClientListingItemViewModel : ViewModelBase
     {
-        public string Username { get; }
+        public Client Client { get; }
+
+        public string Username => Client.Username;
 
         public ICommand EditCommand { get; }
         public ICommand DeleteComannd { get; }
 
-        public ClientListingItemViewModel(string username)
+        public ClientListingItemViewModel(Client client)
         {
-            Username = username;
+            Client = client;
         }
     }
 }

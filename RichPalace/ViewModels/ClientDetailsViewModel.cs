@@ -21,6 +21,21 @@ namespace RichPalace.WPF.ViewModels
         public ClientDetailsViewModel(SelectedClientStore selectedClientStore)
         {
             _selectedClientStore = selectedClientStore;
+
+            _selectedClientStore.SelectedClientChanged += SelectedClientChanged;
+        }
+        public override void Dispose()
+        {
+            _selectedClientStore.SelectedClientChanged -= SelectedClientChanged;
+
+            base.Dispose();
+        }
+
+        private void SelectedClientChanged()
+        {
+            OnPropertyChanged(nameof(HasSelectedClient));
+            OnPropertyChanged(nameof(Username));
+            OnPropertyChanged(nameof(Email));
         }
     }
 }
