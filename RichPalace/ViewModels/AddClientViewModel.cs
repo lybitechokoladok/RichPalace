@@ -13,7 +13,7 @@ namespace RichPalace.WPF.ViewModels
     public class AddClientViewModel : ViewModelBase
     {
         private string _name;
-        public string Name
+        public string Username
         {
             get
             {
@@ -22,7 +22,7 @@ namespace RichPalace.WPF.ViewModels
             set
             {
                 _name = value;
-                OnPropertyChanged(nameof(Name));
+                OnPropertyChanged(nameof(Username));
             }
         }
 
