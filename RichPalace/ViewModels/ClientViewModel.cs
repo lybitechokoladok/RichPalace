@@ -1,5 +1,6 @@
 ﻿using RichPalace.Domain.Models;
 using RichPalace.WPF.Commands;
+using RichPalace.WPF.Services;
 using RichPalace.WPF.Stores;
 using System;
 using System.Collections.Generic;
@@ -17,11 +18,12 @@ namespace RichPalace.WPF.ViewModels
 
         public ICommand AddClientCommand { get;}
 
-        public ClientViewModel(SelectedClientStore selectedClientStore)
+        public ClientViewModel(SelectedClientStore selectedClientStore, INavigationService addClientNavigationService)
         {
-           ClientDetailsViewModel= new ClientDetailsViewModel(selectedClientStore);
-           ClientListingViewModel = new ClientListingViewModel(selectedClientStore);
+            ClientDetailsViewModel= new ClientDetailsViewModel(selectedClientStore);
+            ClientListingViewModel = new ClientListingViewModel(selectedClientStore);
 
+            AddClientCommand = new NavigateCommand(addClientNavigationService);
          }
     }
 }

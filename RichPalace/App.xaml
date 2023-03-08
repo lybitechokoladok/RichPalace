@@ -44,6 +44,10 @@
                         </BeginStoryboard>
                     </Trigger.ExitActions>
                 </Trigger>
+
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Opacity" Value="0.7"/>
+                </Trigger>
             </Style.Triggers>
         </Style>
 

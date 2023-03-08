@@ -41,7 +41,8 @@ namespace RichPalace.WPF
                 CreateHomeNavigationService(s)));
             services.AddTransient<LoginViewModel>(CreateLoginViewModel);
             services.AddTransient<ClientViewModel>(s => new ClientViewModel(
-                s.GetRequiredService<SelectedClientStore>()));
+                s.GetRequiredService<SelectedClientStore>(),
+                CreateAddClientNavigationService(s)));
             services.AddTransient<ReservationListingViewModel>(s => new ReservationListingViewModel(
                 s.GetRequiredService<ReservationStore>(),
                 CreateMakeReservationNavigationService(s)));
@@ -89,7 +90,7 @@ namespace RichPalace.WPF
                 () => serviceProvider.GetRequiredService<LoginViewModel>());
         }
 
-        private INavigationService CreateAddPersonNavigationService(IServiceProvider serviceProvider)
+        private INavigationService CreateAddClientNavigationService(IServiceProvider serviceProvider)
         {
             return new ModalNavigationService<AddClientViewModel>(
                 serviceProvider.GetRequiredService<ModalNavigationStore>(),

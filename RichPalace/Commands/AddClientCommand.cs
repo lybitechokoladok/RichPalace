@@ -16,15 +16,16 @@ namespace RichPalace.WPF.Commands
         private readonly ClientStore _peopleStore;
         private readonly INavigationService _navigationService;
 
-        public AddClientCommand(AddClientViewModel addPersonViewModel, ClientStore peopleStore, INavigationService navigationService)
+        public AddClientCommand(AddClientViewModel addClientViewModel, ClientStore peopleStore, INavigationService navigationService)
         {
-            _addClientViewModel = addPersonViewModel;
+            _addClientViewModel = addClientViewModel;
             _peopleStore = peopleStore;
             _navigationService = navigationService;
         }
 
         public override void Execute(object parameter)
         {
+            _navigationService.Navigate();
         }
     }
 }
