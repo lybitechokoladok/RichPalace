@@ -12,39 +12,15 @@ namespace RichPalace.WPF.ViewModels
 {
     public class AddClientViewModel : ViewModelBase
     {
-        private string _name;
-        public string Username
-        {
-            get
-            {
-                return _name;
-            }
-            set
-            {
-                _name = value;
-                OnPropertyChanged(nameof(Username));
-            }
-        }
-
-        private string _email;
-        public string Email
-        {
-            get
-            {
-                return _email;
-            }
-            set
-            {
-                _email = value;
-                OnPropertyChanged(nameof(Email));
-            }
-        }
+        public ClientDetailsFormViewModel ClientDetailsFormViewModel { get; }
 
         public ICommand SubmitCommand { get; }
         public ICommand CancelCommand { get; }
 
         public AddClientViewModel(ClientStore clientStore, INavigationService closeNavigationService)
         {
+            ClientDetailsFormViewModel = new ClientDetailsFormViewModel();
+
             SubmitCommand = new AddClientCommand(this, clientStore, closeNavigationService);
             CancelCommand = new NavigateCommand(closeNavigationService);
         }
