@@ -23,7 +23,7 @@
             <Grid Grid.Row="0" Margin="0 20 0 0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto" SharedSizeGroup="Label"/>
-                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
                 <TextBlock Grid.Column="0"
@@ -31,7 +31,7 @@
                                Text="Username"
                                FontWeight="Bold"/>
 
-                <TextBlock Grid.Column="1" 
+                <TextBox Grid.Column="1" 
                         Text="{Binding Username}"
                         Margin="20 0 0 0"
                         VerticalAlignment="Center"/>
@@ -40,7 +40,7 @@
             <Grid Grid.Row="1" Margin="0 20 0 0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto" SharedSizeGroup="Label"/>
-                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
                 <TextBlock Grid.Column="0"
@@ -48,7 +48,7 @@
                                Text="Email"
                                FontWeight="Bold"/>
 
-                <TextBlock Grid.Column="1" 
+                <TextBox Grid.Column="1" 
                         Text="{Binding Email}"
                         Margin="20 0 0 0"
                         VerticalAlignment="Center"/>
