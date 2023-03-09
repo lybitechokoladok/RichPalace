@@ -1,4 +1,5 @@
-﻿using RichPalace.WPF.Services;
+﻿using RichPalace.Domain.Models;
+using RichPalace.WPF.Services;
 using RichPalace.WPF.Stores;
 using System;
 using System.Collections.Generic;
@@ -12,9 +13,13 @@ namespace RichPalace.WPF.ViewModels
     {
         public ClientDetailsFormViewModel ClientDetailsFormViewModel { get; set; }
 
-        public EditClientViewModel(ClientStore clientStore, INavigationService closeNavigationService)
+        public EditClientViewModel(SelectedClientStore selectedClient,ClientStore clientStore, INavigationService closeNavigationService)
         {
-            ClientDetailsFormViewModel= new ClientDetailsFormViewModel(closeNavigationService, clientStore);
+            ClientDetailsFormViewModel= new ClientDetailsFormViewModel(closeNavigationService, clientStore)
+            { 
+                Username= selectedClient.SelectedClient.Username,
+                Email= selectedClient.SelectedClient.Email,
+            };
         }
 
     }

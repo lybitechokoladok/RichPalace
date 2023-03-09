@@ -52,6 +52,7 @@ namespace RichPalace.WPF
                 s.GetRequiredService<CloseModalNavigationService>()
                 ));
             services.AddTransient<EditClientViewModel>(s => new EditClientViewModel(
+                s.GetRequiredService<SelectedClientStore>(),
                 s.GetRequiredService<ClientStore>(),
                 s.GetRequiredService<CloseModalNavigationService>()));
             services.AddTransient<MakeReservationViewModel>(s => new MakeReservationViewModel(
