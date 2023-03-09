@@ -8,9 +8,9 @@ namespace RichPalace.Domain.Models
 {
     public class Client
     {
-        public Client(string userName, string email)
+        public Client(string username, string email)
         {
-            Username = userName;
+            Username = username;
             Email = email;
         }
 

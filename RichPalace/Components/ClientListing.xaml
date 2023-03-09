@@ -40,7 +40,8 @@
                                         <TextBlock Grid.Column="0"
                                         Text="{Binding Username}"/>
 
-                                        <custom:DropdownMenu Grid.Column="1" Margin="10 0 0 0">
+                                        <custom:DropdownMenu x:Name="dropDown"
+                                            Grid.Column="1" Margin="10 0 0 0">
                                             <Border Background="White" BorderBrush="Gray"
                                                     BorderThickness="1">
                                                 
