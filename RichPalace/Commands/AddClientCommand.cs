@@ -12,20 +12,31 @@ namespace RichPalace.WPF.Commands
 {
     public class AddClientCommand : CommandBase
     {
-        private readonly AddClientViewModel _addClientViewModel;
-        private readonly ClientStore _peopleStore;
+        private readonly ClientDetailsFormViewModel _clientDetailsFormViewModel;
+        private readonly ClientStore _clientStore;
         private readonly INavigationService _navigationService;
 
-        public AddClientCommand(AddClientViewModel addClientViewModel, ClientStore peopleStore, INavigationService navigationService)
+        public AddClientCommand(ClientDetailsFormViewModel clientDetailsFormViewModel, ClientStore clientStore, INavigationService navigationService)
         {
-            _addClientViewModel = addClientViewModel;
-            _peopleStore = peopleStore;
+            _clientDetailsFormViewModel = clientDetailsFormViewModel;
+            _clientStore = clientStore;
             _navigationService = navigationService;
         }
 
         public override void Execute(object parameter)
         {
-            _navigationService.Navigate();
+            Client client = new Client(_clientDetailsFormViewModel.Username, _clientDetailsFormViewModel.Email);
+
+
+            try
+            {
+                _navigationService.Navigate();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

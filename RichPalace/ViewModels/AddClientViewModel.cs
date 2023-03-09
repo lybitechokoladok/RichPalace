@@ -17,7 +17,7 @@ namespace RichPalace.WPF.ViewModels
 
         public AddClientViewModel(ClientStore clientStore, INavigationService closeNavigationService)
         {
-            ClientDetailsFormViewModel = new ClientDetailsFormViewModel();
+            ClientDetailsFormViewModel = new ClientDetailsFormViewModel(closeNavigationService, clientStore);
 
         }
     }

@@ -18,10 +18,11 @@ namespace RichPalace.WPF.ViewModels
 
         public ICommand AddClientCommand { get;}
 
-        public ClientViewModel(SelectedClientStore selectedClientStore, INavigationService addClientNavigationService)
+        public ClientViewModel(SelectedClientStore selectedClientStore, INavigationService addClientNavigationService,
+            INavigationService editClientNavigationService)
         {
             ClientDetailsViewModel= new ClientDetailsViewModel(selectedClientStore);
-            ClientListingViewModel = new ClientListingViewModel(selectedClientStore);
+            ClientListingViewModel = new ClientListingViewModel(selectedClientStore, editClientNavigationService);
 
             AddClientCommand = new NavigateCommand(addClientNavigationService);
          }

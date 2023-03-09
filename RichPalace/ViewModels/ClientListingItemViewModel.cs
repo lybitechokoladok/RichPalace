@@ -1,4 +1,6 @@
 ﻿using RichPalace.Domain.Models;
+using RichPalace.WPF.Commands;
+using RichPalace.WPF.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,8 +19,10 @@ namespace RichPalace.WPF.ViewModels
         public ICommand EditCommand { get; }
         public ICommand DeleteComannd { get; }
 
-        public ClientListingItemViewModel(Client client)
+        public ClientListingItemViewModel(Client client, INavigationService editClientNavigationService)
         {
+            EditCommand = new NavigateCommand(editClientNavigationService);
+
             Client = client;
         }
     }

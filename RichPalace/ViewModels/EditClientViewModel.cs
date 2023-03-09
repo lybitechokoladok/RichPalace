@@ -1,4 +1,6 @@
-﻿using System;
+﻿using RichPalace.WPF.Services;
+using RichPalace.WPF.Stores;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,9 +12,9 @@ namespace RichPalace.WPF.ViewModels
     {
         public ClientDetailsFormViewModel ClientDetailsFormViewModel { get; set; }
 
-        public EditClientViewModel()
+        public EditClientViewModel(ClientStore clientStore, INavigationService closeNavigationService)
         {
-            ClientDetailsFormViewModel= new ClientDetailsFormViewModel();
+            ClientDetailsFormViewModel= new ClientDetailsFormViewModel(closeNavigationService, clientStore);
         }
 
     }

@@ -34,13 +34,13 @@ namespace RichPalace.WPF.ViewModels
         }
 
 
-        public ClientListingViewModel(SelectedClientStore selectedClientStore)
+        public ClientListingViewModel(SelectedClientStore selectedClientStore, INavigationService editClientNavigationService)
         {
             _clientListingItemViewModel = new ObservableCollection<ClientListingItemViewModel>();
 
-            _clientListingItemViewModel.Add(new ClientListingItemViewModel(new Client("Patric", "Gomabobagamil.com")));
-            _clientListingItemViewModel.Add(new ClientListingItemViewModel(new Client("Luna", "Gbagamil.com")));
-            _clientListingItemViewModel.Add(new ClientListingItemViewModel(new Client("Michail", "Gbagamil.com")));
+            _clientListingItemViewModel.Add(new ClientListingItemViewModel(new Client("Patric", "Gomabobagamil.com"), editClientNavigationService));
+            _clientListingItemViewModel.Add(new ClientListingItemViewModel(new Client("Luna", "Gbagamil.com"), editClientNavigationService));
+            _clientListingItemViewModel.Add(new ClientListingItemViewModel(new Client("Michail", "Gbagamil.com"), editClientNavigationService));
 
 
             _selectedClientStore = selectedClientStore;

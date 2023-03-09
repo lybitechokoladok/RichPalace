@@ -1,4 +1,5 @@
 ﻿using RichPalace.WPF.Commands;
+using RichPalace.WPF.Services;
 using RichPalace.WPF.Stores;
 using System;
 using System.Collections.Generic;
@@ -34,10 +35,16 @@ namespace RichPalace.WPF.ViewModels
             }
         }
 
-        public bool CanSubmit => string.IsNullOrEmpty(Username);
+        public bool CanSubmit => !string.IsNullOrEmpty(Username);
 
         public ICommand SubmitCommand { get; }
         public ICommand CancelCommand { get; }
+
+        public ClientDetailsFormViewModel(INavigationService clientNavigationService, ClientStore clientStore)
+        {
+            SubmitCommand = new AddClientCommand(this, clientStore, clientNavigationService);
+            CancelCommand =new NavigateCommand(clientNavigationService);
+        }
 
     }
 }
