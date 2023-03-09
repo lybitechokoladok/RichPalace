@@ -14,15 +14,11 @@ namespace RichPalace.WPF.ViewModels
     {
         public ClientDetailsFormViewModel ClientDetailsFormViewModel { get; }
 
-        public ICommand SubmitCommand { get; }
-        public ICommand CancelCommand { get; }
 
         public AddClientViewModel(ClientStore clientStore, INavigationService closeNavigationService)
         {
             ClientDetailsFormViewModel = new ClientDetailsFormViewModel();
 
-            SubmitCommand = new AddClientCommand(this, clientStore, closeNavigationService);
-            CancelCommand = new NavigateCommand(closeNavigationService);
         }
     }
 }

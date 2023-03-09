@@ -18,6 +18,7 @@
                    Style="{StaticResource Header}"/>
 
         <components:ClientDetailsForm Grid.Row="1"
-                                      Margin="0 20 0 0"/>
+                                      Margin="0 20 0 0"
+                                      DataContext="{Binding ClientDetailsFormViewModel}"/>
     </Grid>
 </UserControl>
